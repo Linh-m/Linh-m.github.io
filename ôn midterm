@@ -1,0 +1,19 @@
+//cấu trúc cơ bản
+<!DOCTYPE html>
+<html>
+    <body> // nội dung trong web
+        <header>
+            <h1></h1> // có dòng này tiêu đề được hiển thị là tiêu đề cấp 1, chữ sẽ có kích thước lớn nhất, được in đậm
+        //mỗi đoạn bọc trong thẻ p và br để xuống dòng
+        </header>
+    </body>
+ 
+    <html lang="en"></html> // thẻ gốc html là ngôn ngữ tiếng anh 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Cấu hình viewport cho thiết bị di động -->
+    <title>The Document</title> //tiêu đề
+    <link rel="stylesheet" href="styles.css">   <!-- Liên kết đến file CSS bên ngoài -->
+    <ul> </ul> //tạo danh sách không có thứ tự
+    <li></li> //các mục có trong danh sách
+    <a href=""> </a> //tạo liên kết đến trang web khác
+    .todolist{} // mở đầu cho file CSS
+    

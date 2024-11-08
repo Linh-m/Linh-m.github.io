@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html Lang="en">
+<head>
+    <meta charaset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Selector example</h1>
+    <span>this is normal span</span>
+    <span class="highlight">this is span with class highlight and ID id2 </span>
+    <p>this is normal paragraph with tag p</p>
+    <p class="highlight">this is Paragraph with class highlight</p>
+    <p id="id3">This is paragraph with D id3</p>
+    <p class="highlight" id="id4"> This is paragraph with class highlight and ID id4</p>
+</body>
+</html>
