@@ -4,39 +4,57 @@ body {
     padding: 0;
 }
 nav{
-    background-color: #333;
-    color:#fff;
+    background-color:#8B4513;
     padding: 10px;
 }
-nav ul{
-    list-style-type:none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    color:#fff;
+.nav-item {
+    color: rgb(109, 13, 13);
     text-decoration: none;
+    margin-right: 20px;
 }
 
+/* Jumbotron */
 .jumbotron {
-    background-color: #f2f2f2;
-    padding: 40px;
-    text-align:center;
+    background-color: rgb(109, 13, 13);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 }
 .jumbotron h1, .jumbotron h3 {
-    margin: 0;
-}
-.content {
-    padding: 20px;
+    color: #333;
 }
 
+/* Facts section styling */
+.facts-container {
+    display: flex;
+    align-items: flex-start;
+}
+.facts-list {
+    background-color: #f9f4eb;
+    border: 2px dotted rgb(109, 13, 13);
+    padding: 15px;
+    list-style: none;
+}
+.facts-list li {
+    margin-bottom: 5px;
+}
+.facts-list .highlight {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+/* Floating image styling */
+.floatingEl {
+    float: right;
+    margin: 10px;
+    max-width: 200px; /* Adjust size as needed */
+}
+
+/* Table styling */
 table {
     border-collapse: collapse;
     font-size: 1.2em;
     width: 60%;
-    padding: 2%;
     margin: 0.55em;
 }
 th, td {
@@ -44,10 +62,14 @@ th, td {
     padding: 8px;
 }
 tr:hover {
-    background-color: #4CAF50;
-    color:white;
+    background-color: #f2f2f2;
 }
-.floatingE1 {
-    float: left;
-    margin-right: 20px;
+th {
+    background-color: #d4a373;
+    color: #fff;
+}
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
 }
