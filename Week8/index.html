@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java Script Demo</title>
+    </head>
+    <body>
+        <h1>JavaScript Demo</h1>
+        <input type="text" id="a_value">
+        <input type="text" id="b_value">
+        <p id="result"></p>
+        <p id="demo">This is paragraph.</p>
+        <button type="button" onclick=caculate()>Caculate</button>
+        <script>
+            function Calculate(){
+                var a = document.getElementById("a_value").value;
+                //checking whether a is odd or even
+               if (a % 2 == 0){
+                result = "Even";
+               } else{
+                result = "Odd";
+               }
+            document.getElementById("result").innerHTML = "Result:" + result;
+            }
+        </script>
+    </body>
+</html>
