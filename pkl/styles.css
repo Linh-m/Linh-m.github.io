@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --christmas-red: #d42426;
+    --christmas-green: #165B33;
+    --gold: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    text-align: center;
+    margin: 2rem 0;
+    animation: fadeIn 2s ease-in;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--christmas-red);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.event-details {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 2px solid var(--gold);
+    animation: slideUp 1s ease-out;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.detail-item i {
+    color: var(--gold);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.rsvp-section {
+    text-align: center;
+    margin: 3rem 0;
+    animation: fadeIn 2s ease-in;
+}
+
+.rsvp-button {
+    background: var(--christmas-red);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.rsvp-button:hover {
+    background: var(--christmas-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.decoration {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decoration:nth-child(1) { top: 10%; left: 5%; }
+.decoration:nth-child(2) { top: 30%; right: 5%; }
+.decoration:nth-child(3) { bottom: 20%; left: 10%; }
+.decoration:nth-child(4) { bottom: 40%; right: 10%; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Hiệu ứng tuyết rơi */
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .detail-item {
+        font-size: 1rem;
+    }
+
+    .decoration {
+        font-size: 1.5rem;
+    }
+}

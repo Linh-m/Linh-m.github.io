@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Party 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snow" id="snow"></div>
+    
+    <div class="container">
+        <div class="decoration"><i class="fas fa-star"></i></div>
+        <div class="decoration"><i class="fas fa-holly-berry"></i></div>
+        <div class="decoration"><i class="fas fa-snowflake"></i></div>
+        <div class="decoration"><i class="fas fa-bells"></i></div>
+
+        <header class="header">
+            <h1 class="title">Christmas Party 2024</h1>
+            <p class="subtitle">Mời bạn đến dự tiệc Giáng sinh ấm áp cùng chúng tôi!</p>
+        </header>
+
+        <section class="event-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <p>Thời gian: 24 tháng 12, 2024 - 19:00</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Địa điểm: Holiday Inn Hanoi, 108 Nguyễn Trãi, Hà Nội</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-gift"></i>
+                <p>Dress code: Đỏ & Xanh lá - Trang phục Giáng sinh</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-music"></i>
+                <p>Chương trình: Tiệc buffet, Ca nhạc, Trò chơi & Quà tặng</p>
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <h2>Vui lòng xác nhận tham dự trước ngày 20/12/2024</h2>
+            <a href="#" class="rsvp-button">ĐĂNG KÝ THAM DỰ</a>
+        </section>
+    </div>
+
+    <script>
+        // Tạo hiệu ứng tuyết rơi
+        function createSnowflakes() {
+            const snow = document.getElementById('snow');
+            const numberOfSnowflakes = 50;
+
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.innerHTML = '❄';
+                
+                // Random vị trí và thời gian rơi
+                const startPositionLeft = Math.random() * 100;
+                const fallDuration = Math.random() * 3 + 2;
+                const fallDelay = Math.random() * 5;
+                
+                snowflake.style.left = startPositionLeft + 'vw';
+                snowflake.style.animationDuration = fallDuration + 's';
+                snowflake.style.animationDelay = fallDelay + 's';
+                
+                snow.appendChild(snowflake);
+            }
+        }
+
+        // Khởi tạo tuyết rơi khi trang web load
+        window.onload = createSnowflakes;
+    </script>
+</body>
+</html>
