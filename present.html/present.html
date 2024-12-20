@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cozy Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>The Cozy Kitchen</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recipes">Cooking Recipes</a></li>
+                <li><a href="#submit">Recipe contributions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to The Cozy Kitchen</h2>
+            <p>Discover and share delicious recipes!</p>
+        </section>
+
+        <section id="recipes">
+            <h2>Cooking Recipes</h2>
+            <div id="recipe-list">
+                <!-- Các công thức sẽ được thêm động bằng JavaScript -->
+            </div>
+        </section>
+
+        <section id="submit">
+            <h2>Recipes Contribution</h2>
+            <form id="recipe-form">
+                <input type="text" id="recipe-name" placeholder="Receipe Name" required>
+                <textarea id="ingredients" placeholder="Ingredients" required></textarea>
+                <textarea id="instructions" placeholder="Instructions" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; The Cozy Kitchen love you so much. </p>
+    </footer>
+
+    <script>
+        // Lưu trữ công thức trong localStorage
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+        // Lấy các phần tử DOM
+        const recipeForm = document.getElementById('recipe-form');
+        const recipeList = document.getElementById('recipe-list');
+
+        // Hàm hiển thị công thức
+        function displayRecipes() {
+            recipeList.innerHTML = ''; // Xóa danh sách hiện tại
+            recipes.forEach((recipe, index) => {
+                const recipeCard = document.createElement('div');
+                recipeCard.classList.add('recipe-card');
+                recipeCard.innerHTML = `
+                    <h3>${recipe.name}</h3>
+                    <h4>Nguyên Liệu:</h4>
+                    <p>${recipe.ingredients}</p>
+                    <h4>Hướng Dẫn:</h4>
+                    <p>${recipe.instructions}</p>
+                    <button onclick="deleteRecipe(${index})">Xóa</button>
+                `;
+                recipeList.appendChild(recipeCard);
+            });
+        }
+
+        // Hàm thêm công thức mới
+        function addRecipe(event) {
+            event.preventDefault();
+            
+            const recipeName = document.getElementById('recipe-name').value;
+            const ingredients = document.getElementById('ingredients').value;
+            const instructions = document.getElementById('instructions').value;
+
+            const newRecipe = {
+                name: recipeName,
+                ingredients: ingredients,
+                instructions: instructions
+            };
+
+            recipes.push(newRecipe);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            
+            // Làm trống form
+            recipeForm.reset();
+            
+            // Hiển thị lại danh sách công thức
+            displayRecipes();
+        }
+
+        // Hàm xóa công thức
+        function deleteRecipe(index) {
+            recipes.splice(index, 1);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            displayRecipes();
+        }
+
+        // Sự kiện submit form
+        recipeForm.addEventListener('submit', addRecipe);
+
+        // Hiển thị công thức khi trang web tải
+        displayRecipes();
+    </script>
+</body>
+</html>
